@@ -1,0 +1,303 @@
+{
+  "info": {
+    "name": "TaskManager",
+    "_postman_id": "8e0a94f3-e52b-eee3-e1e8-162b26a9b4aa",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "addProcessFIFO",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"command\": [\"java\", \"-h\"],\n    \"priority\": \"high\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/addProcess?strategy=fifo",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "addProcess"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "fifo",
+              "equals": true
+            }
+          ]
+        },
+        "description": "Add process with FIFO strategy"
+      },
+      "response": []
+    },
+    {
+      "name": "addProcessSimple",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"command\": [\"java\", \"-h\"],\n    \"priority\": \"high\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/addProcess?strategy=simple",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "addProcess"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "simple",
+              "equals": true
+            }
+          ]
+        },
+        "description": "Add process with simple strategy"
+      },
+      "response": []
+    },
+    {
+      "name": "addProcessPriority",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"command\": [\"java\", \"-h\"],\n    \"priority\": \"high\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/addProcess?strategy=priority",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "addProcess"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "priority",
+              "equals": true
+            }
+          ]
+        },
+        "description": "Add process with simple strategy"
+      },
+      "response": []
+    },
+    {
+      "name": "listProcessPriority",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/listProcesses?strategy=priority",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "listProcesses"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "priority",
+              "equals": true
+            }
+          ]
+        },
+        "description": "list processes with priority based sorting"
+      },
+      "response": []
+    },
+    {
+      "name": "listProcessTime",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/listProcesses?strategy=time",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "listProcesses"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "time",
+              "equals": true
+            }
+          ]
+        },
+        "description": "list processes with time based sorting"
+      },
+      "response": []
+    },
+    {
+      "name": "listProcessPID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/listProcesses?strategy=pid",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "listProcesses"
+          ],
+          "query": [
+            {
+              "key": "strategy",
+              "value": "pid",
+              "equals": true
+            }
+          ]
+        },
+        "description": "list processes with pid based sorting"
+      },
+      "response": []
+    },
+    {
+      "name": "killProcess",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/killProcess?PID=PID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "killProcess"
+          ],
+          "query": [
+            {
+              "key": "PID",
+              "value": "PID",
+              "equals": true
+            }
+          ]
+        },
+        "description": "kill processes given pid"
+      },
+      "response": []
+    },
+    {
+      "name": "killGroupProcesses",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/killProcess?PGID=PGID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "killProcess"
+          ],
+          "query": [
+            {
+              "key": "PGID",
+              "value": "PGID",
+              "equals": true
+            }
+          ]
+        },
+        "description": "kill processes given pgid"
+      },
+      "response": []
+    },
+    {
+      "name": "killAllProcesses",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/killAllProcesses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "killAllProcesses"
+          ]
+        },
+        "description": "kill ALL processes"
+      },
+      "response": []
+    }
+  ]
+}
